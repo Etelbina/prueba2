@@ -2,72 +2,183 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="https://glitch.com/favicon.ico" />
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap"
+      rel="stylesheet"
+    />
     <title>Trivia Salvaje</title>
-
-    <!-- The website stylesheet -->
     <link rel="stylesheet" href="/style.css" />
-
-    <!-- The website JavaScript file -->
-    <script src="/script.js" defer></script>
   </head>
 
   <body>
-    <main>
-      <h1>Trivia Salvaje</h1>
+    <header>
+      <img
+        src="https://cdn.glitch.global/dd7f20cf-a82f-456c-be93-e62e7360f6d5/font-weight%20600%3B.svg?v=1699373205294"
+        alt="TriviaSalvaje"
+      />
+    </header>
 
-      <section class="primera">
-        <h2>
-          Vuelo de noche, duermo de día y nunca verás plumas, en el ala mía.
-          ¿Quién soy?
-        </h2>
-        <input
-          type="radio"
-          id="respuesta01"
-          name="pregunta1"
-          value="Respuesta01"
-        />
-        <label for="respuesta01">Pinguino</label> <br />
-        <input
-          type="radio"
-          id="respuesta02"
-          name="pregunta1"
-          value="Respuesta02"
-        />
-        <label for="respuesta02">Murciélago</label> <br />
-        <input
-          type="radio"
-          id="respuesta03"
-          name="pregunta1"
-          value="Respuesta03"
-        />
-        <label for="respuesta03">Gato</label> <br />
-        <button onclick="botonRespuesta()">Enviar</button>
-        <p class="mensaje" id="respuestacorrecta1"></p>
+    <main>
+      <section id="welcome" class="welcome card show">
+        <label class="lablebox" for="name">Ingresa tu nombre</label><br />
+        <input class="box" type="text" id="name" name="name" /><br />
+        <button onclick="buttonWelcome()" class="button show">Enviar</button>
+        <p class="message show" id="messageWelcome"></p>
+        <button
+          id="buttonStart"
+          onclick="buttonStart()"
+          class="button hide"
+        >
+          Comenzar
+        </button>
       </section>
 
-      <section class="segunda">
+      <section id="first" class="first card hide">
         <h2>
-          Canto en la orilla, vivo en el agua, no soy pescado ni soy cigarra.
+          1. Vuelo de noche, duermo de día y nunca verás plumas, en el ala mía.
           ¿Quién soy?
         </h2>
-        <input type="radio" id="respuesta1" name="pregunta2" value="perro" />
-        <label for="respuesta1">Perro</label> <br />
-        <input type="radio" id="respuesta2" name="pregunta2" value="gallina" />
-        <label for="respuesta2">Gallina</label> <br />
-        <input type="radio" id="respuesta3" name="pregunta2" value="rana" />
-        <label for="respuesta3">Rana</label> <br />
-        <button onclick="botonRespuesta2()">Enviar</button>
-        <p class="mensaje" id="respuestacorrecta2"></p>
+        <input
+          type="radio"
+          id="answer1.1"
+          name="question1"
+          value="pinguino"
+        />
+        <label for="answer1.1">Pingüino</label> <br />
+        <input
+          type="radio"
+          id="answer1.2"
+          name="question1"
+          value="murcielago"
+        />
+        <label for="answer1.2">Murciélago</label> <br />
+        <input
+          type="radio"
+          id="answer1.3"
+          name="question1"
+          value="answer1.3"
+        />
+        <label for="answer1.3">Gato</label> <br />
+        <button 
+          onclick="buttonQuestion('question1', 1, 'rightAnswer1', 'Murciélago', 'buttonQuestion1', 'buttonNext1')"
+          class="button" 
+          id="buttonQuestion1"
+        >
+          Enviar
+        </button>
+        <p class="message" id="rightAnswer1"></p>
+        <button
+          id="buttonNext1"
+          onclick="buttonNext('first', 'second', 'second card show')"
+          class="button hide"
+        >
+          Siguiente
+        </button>
+      </section>
+
+      <section id="second" class="second card hide">
+        <h2>
+          2. Canto en la orilla, vivo en el agua, no soy pescado ni soy cigarra.
+          ¿Quién soy?
+        </h2>
+
+        <input 
+          type="radio" 
+          id="answer2.1"
+          name="question2" 
+          value="perro" />
+        <label for="answer2.1"> Perro </label> <br />
+        <input 
+          type="radio" 
+          id="answer2.2"
+          name="question2" 
+          value="gallina" />
+        <label 
+               for="answer2.2">Gallina</label> <br />
+        <input 
+          type="radio" 
+          id="answer2.3"
+          name="question2" 
+          value="rana" />
+        <label 
+               for="answer2.3">Rana</label> <br />
+
+        <button
+          onclick="buttonQuestion('question2', 2, 'rightAnswer2', 'Rana', 'buttonQuestion2', 'buttonNext2')"
+          class="button"
+          id="buttonQuestion2"
+        >
+          Enviar
+        </button>
+        <p class="message" id="rightAnswer2"></p>
+        <br />
+        <button
+          id="buttonNext2"
+          onclick="buttonNext('second', 'third', 'third card show')"
+          class="button hide"
+        >
+          Siguiente
+        </button>
+      </section>
+
+      <section id="third" class="third card hide">
+        <h2>
+          3. Tengo grandes orejas y trompa, me gusta comer hojas y bañar mi dura
+          piel. ¿Quién soy?
+        </h2>
+        <input
+          type="radio"
+          id="answer3.1"
+          name="question3"
+          value="elefante"
+        />
+        <label for="answer3.1">Elefante</label> <br />
+        <input
+          type="radio"
+          id="answer3.2"
+          name="question3"
+          value="hipopotamo"
+        />
+        <label for="answer3.2">Hipopótamo</label> <br />
+        <input 
+          type="radio" 
+          id="answer3.3"
+          name="question3"
+          value="jirafa" />
+        <label for="answer3.3">Jirafa</label> <br />
+        <button
+          onclick="buttonQuestion('question3', 0, 'rightAnswer3', 'Elefante', 'buttonQuestion3', 'buttonNext3')"
+          class="button"
+          id="buttonQuestion3"
+        >
+          Finalizar
+        </button>
+        <p class="message" id="rightAnswer3"></p>
+        <button
+          id="buttonNext3"
+          onclick="buttonNext('third', 'end', 'end card show')"
+          class="button hide"
+        >
+          Ver puntaje
+        </button>
         <br />
       </section>
 
-      <section class="resultado">
-        <h2>Ver puntaje</h2>
-        <button onclick="puntajeFinal()">Resultado</button>
-        <p class="mensaje" id="puntajeFinal"></p>
+      <section id="end" class="end card hide">
+        <p class="message" id="finalScore"></p>
+        <button
+          id="buttonRestart"
+          onclick="buttonRestart()"
+          class="button hide"
+        >
+          Reiniciar
+        </button>
       </section>
     </main>
+
+    <script src="/script.js" defer></script>
   </body>
 </html>

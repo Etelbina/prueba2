@@ -7,65 +7,175 @@ body {
 
 main {
   padding: 30px;
+  font-family: "Rubik", sans-serif;
 }
 
-h1 {
-  color: #9cd910;
-  text-align: center;
-  font-size: 40px;
+header {
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  width: 400px;
+  height: 150px;
 }
 
 h2 {
   color: #ffffff;
 }
 
-button {
+section.card {
+  border-radius: 10px;
+  padding: 40px;
+  margin: 20px 30px;
+  width: 220px;
+  height: 500px;
+  margin: 25px auto;
+}
+
+section.welcome {
+  border: 2px #f38c01 solid;
+  box-shadow: 0 0 15px 5px #f38c01;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+section.first {
+  border: 2px #2ea8fb solid;
+  box-shadow: 0 0 15px 5px #2ea8fb;
+}
+
+section.second {
+  border: 2px #853eb8 solid;
+  box-shadow: 0 0 15px 5px #853eb8;
+}
+
+section.third {
+  border: 2px #e40025 solid;
+  box-shadow: 0 0 15px 5px #e40025;
+}
+
+section.end {
+  text-align: center;
+  border: 2px #9cd910 solid;
+  box-shadow: 0 0 15px 5px #9cd910;
+}
+
+.lablebox {
+  margin-top: 50px;
+  display: inline-block;
+}
+
+.box {
+  margin-top: 72px;
+  width: 220px;
+  height: 35px;
+  border-radius: 5px;
+  font-family: "Rubik", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  color: #f38c01;
+  text-transform: uppercase;
+}
+
+.button {
+  font-family: "Rubik", sans-serif;
   margin-top: 30px;
   font-weight: bold;
   font-size: 15px;
-  background-color: #f38c01;
   border-style: none;
   border-radius: 5px;
   height: 32px;
   width: 105px;
   border: 1px #ffffff solid;
-  box-shadow: 0 0 7px 3px #f38c01;
   text-transform: uppercase;
 }
 
-section.primera {
-  border-radius: 10px;
-  border: 2px #2ea8fb solid;
-  padding: 40px;
-  margin: 50px 30px;
-  box-shadow: 0 0 15px 5px #2ea8fb;
+.button:hover {
+  font-size: 18px;
+  height: 38px;
+  width: 120px;
 }
 
-section.segunda {
-  border-radius: 10px;
-  border: 2px #853eb8 solid;
-  padding: 30px;
-  margin: 50px 30px;
-  box-shadow: 0 0 15px 5px #853eb8;
+section.welcome button {
+  color: #ffffff;
+  background-color: #f38c01;
+  box-shadow: 0 0 7px 3px #f38c01;
 }
 
-section.resultado {
-  text-align: center;
+section.first button {
+  color: #ffffff;
+  background-color: #2ea8fb;
+  box-shadow: 0 0 7px 3px #2ea8fb;
 }
 
-section.primera p.mensaje {
+section.second button {
+  color: #ffffff;
+  background-color: #853eb8;
+  box-shadow: 0 0 7px 3px #853eb8;
+}
+
+section.third button {
+  color: #ffffff;
+  background-color: #e40025;
+  box-shadow: 0 0 7px 3px #e40025;
+}
+
+section.end button {
+  color: #ffffff;
+  background-color: #9cd910;
+  box-shadow: 0 0 7px 3px #9cd910;
+}
+
+#buttonNext3 {
+  font-size: 20px;
+  height: 40px;
+  width: 180px;
+}
+
+#buttonNext3:hover {
   font-size: 25px;
+  height: 48px;
+  width: 220px;
+}
+
+
+p.message {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+section.welcome p.message {
+  color: #f38c01;
+  text-shadow: 1px 1px 30px #f38c01;
+}
+
+section.first p.message {
   color: #2ea8fb;
   text-shadow: 1px 1px 30px #2ea8fb;
 }
 
-section.segunda p.mensaje {
-  font-size: 25px;
+section.second p.message {
   color: #853eb8;
-  text-shadow: 0 2px, 2px, 5px #ffffff;
-  text-shadow: 3px 3px 30px #853eb8;
+  text-shadow: 5px 5px 10px #853eb8;
 }
 
-section.resultado p.mensaje {
-  font-size: 30px;
+section.third p.message {
+  color: #e40025;
+  text-shadow: 1px 1px 30px #e40025;
+}
+
+section.end p.message {
+  color: #9cd910;
+  font-size: 40px;
+  font-weight: bold;
+  text-shadow: 1px 1px 30px #9cd910;
+}
+
+.hide {
+  display: none;
 }

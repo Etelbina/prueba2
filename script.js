@@ -1,44 +1,71 @@
-let puntaje = 0;
+let user = document.getElementById("name");
+let score = 0;
 
-function botonRespuesta() {
-  let radioButtons = document.getElementsByName("pregunta1");
-  if (radioButtons[1].checked) {
-    puntaje++;
-    document.getElementById("respuestacorrecta1").innerHTML =
-      "Felicidades. Es correcto";
-  } else {
-    document.getElementById("respuestacorrecta1").innerHTML =
-      "La respuesta es incorrecta. La respuesta correcta es Murciélago";
-  }
+function buttonWelcome() {
+  document.getElementById("messageWelcome").innerHTML =
+    "HOLA " + user.value.toUpperCase();
+
+  document.getElementById("buttonStart").className = "button show";
 }
 
-function botonRespuesta2() {
-  let radioButtons = document.getElementsByName("pregunta2");
-  if (radioButtons[2].checked) {
-    puntaje++;
-    document.getElementById("respuestacorrecta2").innerHTML =
-      "Felicidades. Es correcto";
-  } else {
-    document.getElementById("respuestacorrecta2").innerHTML =
-      "La respuesta es incorrecta. La respuesta correcta es Rana";
-  }
+function buttonStart() {
+  document.getElementById("welcome").className = "hide";
+  document.getElementById("first").className = "first card show";
 }
 
-function limpiar(radioButtons, respuestacorrecta) {
+function buttonQuestion(radio, index, answer, word, funct, button) {
+  let radioButtons = document.getElementsByName(radio);
+  if (radioButtons[index].checked) {
+    score++;
+    document.getElementById(answer).innerHTML =
+      "Felicidades. Es correcto";
+  } else {
+    document.getElementById(answer).innerHTML =
+      "La respuesta es incorrecta. La respuesta correcta es " + word;
+  }
+  
+  document.getElementById(funct).className = "button hide";
+  document.getElementById(button).className = "button show";
+  
+}
+
+function buttonNext(sectionToHide, sectionToshow, fullClassName) {
+  document.getElementById(sectionToHide).className = "hide";
+  document.getElementById(sectionToshow).className = fullClassName;
+  
+  document.getElementById("finalScore").innerHTML =
+    "¡¡ " + user.value.toUpperCase() + " !! <br/> Tu puntaje final es " + score;
+
+    document.getElementById("buttonRestart").className = "button show";
+}
+
+function buttonRestart() {
+    score = 0;
+    resetUI()
+    resetQuestions();
+}
+
+function resetUI() {
+    document.getElementById("end").className = "end card hide";
+    document.getElementById("welcome").className = "welcome card show";
+    document.getElementById("buttonStart").className = "button hide";
+    document.getElementById("name").value = "";
+    document.getElementById("messageWelcome").innerHTML = "";
+}
+
+
+function clean(radioButtons, rightAnswer, buttonQuestion, buttonNext) {
   for (var i = 0; i < 3; i++) {
     radioButtons[i].checked = false;
   }
-
-  document.getElementById(respuestacorrecta).innerHTML = "";
+  document.getElementById(rightAnswer).innerHTML = "";
+  document.getElementById(buttonQuestion).className = "button show";
+  document.getElementById(buttonNext).className = "button hide";
 }
 
-function puntajeFinal() {
-  document.getElementById("puntajeFinal").innerHTML =
-    "Tu puntaje final es " + puntaje;
+function resetQuestions() {
 
-  let radios = document.getElementsByName("pregunta2");
-  puntaje = 0;
-
-  limpiar(document.getElementsByName("pregunta1"), "respuestacorrecta1");
-  limpiar(document.getElementsByName("pregunta2"), "respuestacorrecta2");
-}
+  clean(document.getElementsByName("question1"), "rightAnswer1", "buttonQuestion1", "buttonNext1");
+  clean(document.getElementsByName("question2"), "rightAnswer2", "buttonQuestion2", "buttonNext2");
+  clean(document.getElementsByName("question3"), "rightAnswer3", "buttonQuestion3", "buttonNext3");
+} 
