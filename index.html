@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+    <title>Trivia Salvaje</title>
+
+    <!-- The website stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- The website JavaScript file -->
+    <script src="/script.js" defer></script>
+  </head>
+
+  <body>
+    <main>
+      <h1>Trivia Salvaje</h1>
+
+      <section class="primera">
+        <h2>
+          Vuelo de noche, duermo de día y nunca verás plumas, en el ala mía.
+          ¿Quién soy?
+        </h2>
+        <input
+          type="radio"
+          id="respuesta01"
+          name="pregunta1"
+          value="Respuesta01"
+        />
+        <label for="respuesta01">Pinguino</label> <br />
+        <input
+          type="radio"
+          id="respuesta02"
+          name="pregunta1"
+          value="Respuesta02"
+        />
+        <label for="respuesta02">Murciélago</label> <br />
+        <input
+          type="radio"
+          id="respuesta03"
+          name="pregunta1"
+          value="Respuesta03"
+        />
+        <label for="respuesta03">Gato</label> <br />
+        <button onclick="botonRespuesta()">Enviar</button>
+        <p class="mensaje" id="respuestacorrecta1"></p>
+      </section>
+
+      <section class="segunda">
+        <h2>
+          Canto en la orilla, vivo en el agua, no soy pescado ni soy cigarra.
+          ¿Quién soy?
+        </h2>
+        <input type="radio" id="respuesta1" name="pregunta2" value="perro" />
+        <label for="respuesta1">Perro</label> <br />
+        <input type="radio" id="respuesta2" name="pregunta2" value="gallina" />
+        <label for="respuesta2">Gallina</label> <br />
+        <input type="radio" id="respuesta3" name="pregunta2" value="rana" />
+        <label for="respuesta3">Rana</label> <br />
+        <button onclick="botonRespuesta2()">Enviar</button>
+        <p class="mensaje" id="respuestacorrecta2"></p>
+        <br />
+      </section>
+
+      <section class="resultado">
+        <h2>Ver puntaje</h2>
+        <button onclick="puntajeFinal()">Resultado</button>
+        <p class="mensaje" id="puntajeFinal"></p>
+      </section>
+    </main>
+  </body>
+</html>
