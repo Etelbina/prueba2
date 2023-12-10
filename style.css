@@ -2,7 +2,7 @@ html,
 body {
   width: 100%;
   color: white;
-  background-color: #222222;
+  background-color: #000000;
 }
 
 main {
@@ -18,8 +18,12 @@ header {
 }
 
 img {
-  width: 400px;
   height: 150px;
+  margin-left: 15%;
+}
+
+.logo {
+  margin: 0 auto;
 }
 
 h2 {
@@ -41,6 +45,18 @@ section.welcome {
   text-align: center;
   font-size: 40px;
   font-weight: 600;
+}
+
+.categories {
+  border: 2px #f5db24 solid;
+  box-shadow: 0 0 15px 5px #f5db24;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 section.first {
@@ -107,6 +123,12 @@ section.welcome button {
   box-shadow: 0 0 7px 3px #f38c01;
 }
 
+section.categories button {
+  color: #000000;
+  background-color: #f5db24;
+  box-shadow: 0 0 7px 3px #f5db24;
+}
+
 section.first button {
   color: #ffffff;
   background-color: #2ea8fb;
@@ -131,18 +153,19 @@ section.end button {
   box-shadow: 0 0 7px 3px #9cd910;
 }
 
-#buttonNext3 {
+#buttonNext3,
+#buttonNextPlant3 {
   font-size: 20px;
   height: 40px;
   width: 180px;
 }
 
-#buttonNext3:hover {
+#buttonNext3:hover,
+#buttonNextPlant3:hover {
   font-size: 25px;
   height: 48px;
   width: 220px;
 }
-
 
 p.message {
   font-size: 20px;
