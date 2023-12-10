@@ -1,3 +1,4 @@
+/* General Styles */
 html,
 body {
   width: 100%;
@@ -6,7 +7,6 @@ body {
 }
 
 main {
-  padding: 30px;
   font-family: "Rubik", sans-serif;
 }
 
@@ -15,6 +15,7 @@ header {
   width: 100%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 
 img {
@@ -29,6 +30,8 @@ img {
 h2 {
   color: #ffffff;
 }
+
+/* Sections general styles */
 
 section.card {
   border-radius: 10px;
@@ -59,6 +62,109 @@ section.welcome {
   align-items: center;
 }
 
+#timer {
+  color: #e40025;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 1px 1px 30px #e40025;
+  text-align: center;
+  font-family: "Rubik", sans-serif;
+  margin: 3px;
+}
+
+/* Radio styles */
+
+input[type="radio"] {
+  appearance: none;
+  background-color: #ffffff;
+  margin: 20px 10px 0 0;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+}
+
+label.answer:hover {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 8px;
+}
+
+input[type="radio"]:hover {
+  background-color: #ffffff;
+  width: 18px;
+  height: 18px;
+}
+
+input[type="radio"]:checked {
+  box-shadow: 3px 3px 10px #2ea8fb;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 8px;
+}
+
+input[type="radio"]:checked + label {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 8px;
+}
+
+section.first label.answer:hover {
+  text-shadow: 3px 3px 10px #2ea8fb;
+}
+
+section.first input[type="radio"]:hover {
+  box-shadow: 3px 3px 10px #2ea8fb;
+}
+
+section.first input[type="radio"]:checked {
+  background-color: #2ea8fb;
+  text-shadow: 3px 3px 10px #2ea8fb;
+}
+
+section.first input[type="radio"]:checked + label {
+  color: #2ea8fb;
+  text-shadow: 3px 3px 10px #2ea8fb;
+}
+
+section.second label.answer:hover {
+  text-shadow: 3px 3px 10px #853eb8;
+}
+
+section.second input[type="radio"]:hover {
+  box-shadow: 3px 3px 10px #853eb8;
+}
+
+section.second input[type="radio"]:checked {
+  background-color: #853eb8;
+  text-shadow: 3px 3px 10px #853eb8;
+}
+
+section.second input[type="radio"]:checked + label {
+  color: #853eb8;
+  text-shadow: 3px 3px 10px #853eb8;
+}
+
+section.third label.answer:hover {
+  text-shadow: 3px 3px 10px #dc02cd;
+}
+
+section.third input[type="radio"]:hover {
+  box-shadow: 3px 3px 10px #dc02cd;
+}
+
+section.third input[type="radio"]:checked {
+  background-color: #dc02cd;
+  text-shadow: 3px 3px 10px #dc02cd;
+}
+
+section.third input[type="radio"]:checked + label {
+  color: #dc02cd;
+  text-shadow: 3px 3px 10px #dc02cd;
+}
+
+/* Section neon style */
+
 section.first {
   border: 2px #2ea8fb solid;
   box-shadow: 0 0 15px 5px #2ea8fb;
@@ -70,8 +176,8 @@ section.second {
 }
 
 section.third {
-  border: 2px #e40025 solid;
-  box-shadow: 0 0 15px 5px #e40025;
+  border: 2px #dc02cd solid;
+  box-shadow: 0 0 15px 5px #dc02cd;
 }
 
 section.end {
@@ -79,6 +185,8 @@ section.end {
   border: 2px #9cd910 solid;
   box-shadow: 0 0 15px 5px #9cd910;
 }
+
+/*  Text box */
 
 .lablebox {
   margin-top: 50px;
@@ -98,6 +206,8 @@ section.end {
   text-transform: uppercase;
 }
 
+/* Buttons general styles */
+
 .button {
   font-family: "Rubik", sans-serif;
   margin-top: 30px;
@@ -116,6 +226,8 @@ section.end {
   height: 38px;
   width: 120px;
 }
+
+/* Buttons sections styles */
 
 section.welcome button {
   color: #ffffff;
@@ -143,8 +255,8 @@ section.second button {
 
 section.third button {
   color: #ffffff;
-  background-color: #e40025;
-  box-shadow: 0 0 7px 3px #e40025;
+  background-color: #dc02cd;
+  box-shadow: 0 0 7px 3px #dc02cd;
 }
 
 section.end button {
@@ -152,6 +264,14 @@ section.end button {
   background-color: #9cd910;
   box-shadow: 0 0 7px 3px #9cd910;
 }
+
+.buttonSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Specific styles for next button */
 
 #buttonNext3,
 #buttonNextPlant3 {
@@ -167,14 +287,17 @@ section.end button {
   width: 220px;
 }
 
+/* Texts that appear with show class */
+
 p.message {
   font-size: 20px;
   font-weight: bold;
 }
 
-section.welcome p.message {
-  color: #f38c01;
-  text-shadow: 1px 1px 30px #f38c01;
+p.error {
+  font-size: 15px;
+  color: #e40025;
+  text-shadow: 3px 3px 10px #e40025;
 }
 
 section.first p.message {
@@ -188,8 +311,8 @@ section.second p.message {
 }
 
 section.third p.message {
-  color: #e40025;
-  text-shadow: 1px 1px 30px #e40025;
+  color: #dc02cd;
+  text-shadow: 1px 1px 30px #dc02cd;
 }
 
 section.end p.message {
@@ -198,6 +321,8 @@ section.end p.message {
   font-weight: bold;
   text-shadow: 1px 1px 30px #9cd910;
 }
+
+/* Hide class */
 
 .hide {
   display: none;
